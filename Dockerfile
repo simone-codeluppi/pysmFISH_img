@@ -39,11 +39,11 @@ RUN ["/bin/bash", "-c", "yes | pip install nd2reader==2.1.3 sympy ruamel.yaml mp
 RUN ["/bin/bash", "-c", "yes | pip install -U loompy"]
 
 # Final install pysmFISH
-RUN ["/bin/bash", "-c", "git clone https://github.com/linnarsson-lab/pysmFISH.git"]
-RUN cd pysmFISH
-RUN ["/bin/bash", "-c", "pip install --no-cache-dir ."]
-# Need to solve the issue with entry points
-# RUN ["/bin/bash", "-c", "yes | pip install --no-cache-dir pysmFISH"]
+# RUN ["/bin/bash", "-c", "git clone https://github.com/linnarsson-lab/pysmFISH.git"]
+# RUN cd pysmFISH
+# RUN ["/bin/bash", "-c", "pip install --no-cache-dir ."]
+
+RUN ["/bin/bash", "-c", "yes | pip install --no-cache-dir pysmFISH"]
 
 # Add the kernel of the pysmFISH_env to the jupyter lab
 RUN ["/bin/bash", "-c", "/opt/conda/envs/pysmFISH_testing_env/bin/python -m pip install ipykernel"]
