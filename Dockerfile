@@ -39,7 +39,7 @@ RUN ["/bin/bash", "-c", "yes | pip install pycodestyle mypy sphinx sphinx_rtd_th
 RUN ["/bin/bash", "-c", "yes | pip install --no-cache-dir pysmFISH"]
 
 # Add the kernel of the pysmFISH_env to the jupyter lab
-RUN ["/bin/bash", "-c", "/opt/conda/envs/pysmFISH_testing_env/bin/python -m pip install ipykernel"]
+RUN ["/bin/bash", "-c", "/opt/conda/envs/pysmFISH_env/bin/python -m pip install ipykernel"]
 RUN ["/bin/bash", "-c", "python -m ipykernel install --user --name pysmFISH_env --display-name 'pysmFISH_env'"]
 
 # Install extension for matplotlib in jupyter lab
