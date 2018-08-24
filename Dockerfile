@@ -30,19 +30,12 @@ RUN  ["/bin/bash", "-c", "yes | conda update -n base conda && conda update anaco
 
 # -------------------------------
 # Create the pysmFISH_env
-RUN ["/bin/bash", "-c", "yes | conda create --name pysmFISH_env python=3.6 h5py numpy scikit-image pandas pylint"]
+RUN ["/bin/bash", "-c", "yes | conda create --name pysmFISH_env python=3.6"]
 RUN ["/bin/bash", "-c", "yes | source activate pysmFISH_env"]
 # Update pip
-RUN ["/bin/bash", "-c","yes | pip install --upgrade pip"]
-RUN ["/bin/bash", "-c", "yes | conda install -c conda-forge scipy dask distributed scikit-learn jupyterlab nodejs ipympl"]
-RUN ["/bin/bash", "-c", "yes | pip install nd2reader==2.1.3 sympy ruamel.yaml mpi4py sphinx sphinx_rtd_theme twine pycodestyle mypy cython"]
-RUN ["/bin/bash", "-c", "yes | pip install -U loompy"]
-
-# Final install pysmFISH
-# RUN ["/bin/bash", "-c", "git clone https://github.com/linnarsson-lab/pysmFISH.git"]
-# RUN cd pysmFISH
-# RUN ["/bin/bash", "-c", "pip install --no-cache-dir ."]
-
+RUN ["/bin/bash", "-c", "yes | pip install --upgrade pip"]
+RUN ["/bin/bash", "-c", "yes | conda install -c conda-forge jupyterlab nodejs ipympl"]
+RUN ["/bin/bash", "-c", "yes | pip install pycodestyle mypy"]
 RUN ["/bin/bash", "-c", "yes | pip install --no-cache-dir pysmFISH"]
 
 # Add the kernel of the pysmFISH_env to the jupyter lab
