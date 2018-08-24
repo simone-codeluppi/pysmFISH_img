@@ -40,7 +40,7 @@ RUN ["/bin/bash", "-c", "yes | pip install -U loompy"]
 
 # Final install pysmFISH
 RUN ["/bin/bash", "-c", "git clone https://github.com/linnarsson-lab/pysmFISH.git"]
-RUN ["/bin/bash", "-c", "cd pysmFISH"]
+RUN cd pysmFISH
 RUN ["/bin/bash", "-c", "pip install --no-cache-dir ."]
 # Need to solve the issue with entry points
 # RUN ["/bin/bash", "-c", "yes | pip install --no-cache-dir pysmFISH"]
