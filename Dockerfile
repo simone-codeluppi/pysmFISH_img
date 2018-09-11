@@ -31,7 +31,7 @@ RUN  ["/bin/bash", "-c", "yes | conda update -n base conda && conda update anaco
 # -------------------------------
 # Create the pysmFISH_env
 RUN ["/bin/bash", "-c", "yes | conda create --name pysmFISH_env python=3.6"]
-RUN ["/bin/bash", "-c", "yes | source activate pysmFISH_env"]
+RUN ["/bin/bash", "-c", "yes | conda activate pysmFISH_env"]
 # Update pip
 RUN ["/bin/bash", "-c", "yes | pip install --upgrade pip"]
 RUN ["/bin/bash", "-c", "yes | conda install -c conda-forge jupyterlab nodejs ipympl"]
@@ -44,6 +44,7 @@ RUN ["/bin/bash", "-c", "python -m ipykernel install --user --name pysmFISH_env 
 
 # Install extension for matplotlib in jupyter lab
 RUN ["/bin/bash", "-c", "jupyter labextension install @jupyter-widgets/jupyterlab-manager"]
+RUN ["/bin/bash", "-c", "jupyter labextension install jupyter-matplotlib"]
 # -------------------------------
 
 # Add some useful commands to ~/.bashrc
