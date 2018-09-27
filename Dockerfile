@@ -30,7 +30,7 @@ RUN  ["/bin/bash", "-c", "yes | conda update -n base conda && conda update anaco
 
 # -------------------------------
 # Create the pysmFISH_env
-RUN ["/bin/bash", "-c", "yes | conda create --name pysmFISH_env python=3.6"]
+RUN ["/bin/bash", "-c", "yes | conda create --name pysmFISH_env python=3.6 pip jupyter"]
 RUN ["/bin/bash", "-c", "yes | source activate pysmFISH_env"]
 # Update pip
 RUN ["/bin/bash", "-c", "yes | pip install --upgrade pip"]
