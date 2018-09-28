@@ -34,7 +34,7 @@ RUN ["/bin/bash", "-c", "yes | conda create --name pysmFISH_env python=3.6 pip j
 RUN ["/bin/bash", "-c", "yes | source activate pysmFISH_env"]
 # Update pip
 RUN ["/bin/bash", "-c", "yes | pip install --upgrade pip"]
-RUN ["/bin/bash", "-c", "yes | conda install -c conda-forge jupyterlab nodejs ipympl"]
+RUN ["/bin/bash", "-c", "yes | conda install -c conda-forge nodejs ipympl"]
 RUN ["/bin/bash", "-c", "yes | pip install pycodestyle mypy sphinx sphinx_rtd_theme"]
 RUN ["/bin/bash", "-c", "yes | pip install --no-cache-dir pysmFISH"]
 
